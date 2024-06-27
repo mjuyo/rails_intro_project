@@ -17,6 +17,17 @@
       <%= link_to 'Trees', trees_path %>
       <%= link_to 'About', about_path %>
     </nav>
+    <form action="<%= search_trees_path %>" method="get">
+      <input type="text" name="query" placeholder="Search trees...">
+      <select name="park_id">
+        <option value="">Neighborhood</option>
+        <% Park.distinct.order(:nbhd).pluck(:nbhd).uniq.each do |nbhd| %>
+          <option value="<%= nbhd %>"><%= nbhd %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Search">
+    </form>
+
     <%= yield %>
   </body>
 </html>

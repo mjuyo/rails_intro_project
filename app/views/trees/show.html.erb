@@ -1,2 +1,5 @@
-<h1>Trees#show</h1>
-<p>Find me in app/views/trees/show.html.erb</p>
+<h1><%= @tree.common %></h1>
+<p>Botanical Name: <%= @tree.botanical %></p>
+<p>Location: (<%= @tree.x %>, <%= @tree.y %>)</p>
+<p>Neighborhood: <%= @tree.nbhd %></p>
+<p>Park: <%= link_to @tree.park.park_name, park_path(@tree.park) if @tree.park %></p>
