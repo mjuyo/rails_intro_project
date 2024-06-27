@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ParksTreesWinnipeg</title>
+    <title>Parks and Trees in Winnipeg</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Parks', parks_path %>
+      <%= link_to 'Trees', trees_path %>
+      <%= link_to 'About', about_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

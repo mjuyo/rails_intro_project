@@ -1,0 +1,11 @@
+<h1><%= @park.park_name %></h1>
+<p>Location: <%= @park.location %></p>
+<p>Neighborhood: <%= @park.nbhd %></p>
+<p>Area (ha): <%= @park.area_ha %></p>
+
+<h2>Trees in this park</h2>
+<ul>
+    <% @trees.each do |tree| %>
+        <li><%= link_to tree.common, tree_path(tree) %></li>
+    <% end %>
+</ul>
