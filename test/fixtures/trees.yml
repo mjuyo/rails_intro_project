@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tree_id: MyString
+  botanical: MyString
+  common: MyString
+  x: MyString
+  'y': MyString
+  nbhd: MyString
+  park: MyString
+  loc_class: MyString
+  street: MyString
+
+two:
+  tree_id: MyString
+  botanical: MyString
+  common: MyString
+  x: MyString
+  'y': MyString
+  nbhd: MyString
+  park: MyString
+  loc_class: MyString
+  street: MyString

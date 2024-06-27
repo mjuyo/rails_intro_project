@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  park_id: MyString
+  park_name: MyString
+  the_geom: MyText
+  location: MyString
+  nbhd: MyString
+  area_ha: 1.5
+
+two:
+  park_id: MyString
+  park_name: MyString
+  the_geom: MyText
+  location: MyString
+  nbhd: MyString
+  area_ha: 1.5
