@@ -10,5 +10,7 @@ class CreateParks < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    add_index :parks, :park_id, unique: true
   end
 end

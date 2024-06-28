@@ -44,3 +44,17 @@ trees_data.each do |tree|
         street: tree['street']
     )
 end
+
+# Fetching and seeding assets
+assets_url = 'https://data.winnipeg.ca/resource/dk7c-zxyd.json'
+assets_data = JSON.parse(URI.open(assets_url).read)
+assets_data.each do |asset|
+  park = Park.find_by(park_id: asset['park_id'])
+  Asset.create(
+    asset_id: asset['asset_id'],
+    asset_class: asset['asset_class'],
+    park: park,
+    park_name: asset['park_name'],
+    asset_type: asset['asset_type']
+  )
+end
