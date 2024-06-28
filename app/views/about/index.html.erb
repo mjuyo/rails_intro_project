@@ -1,2 +1,38 @@
-<h1>About</h1>
-<p>This application displays information about parks and trees in Winnipeg using data from open APIs.</p>
+<h1>About Parks, Trees, and Assets in Winnipeg</h1>
+
+<p>This application integrates data from three datasets provided by the City of Winnipeg's Open Data Portal. The goal is to create a comprehensive platform that provides detailed information about parks, their trees, and associated assets in Winnipeg.</p>
+
+<h2>Data Sources:</h2>
+
+<h3>Parks Dataset</h3>
+<p>
+  <strong>Description:</strong> Contains information about parks in Winnipeg, including park names, locations, neighborhoods, and areas.<br>
+  <strong>Key Fields:</strong> park_id, park_name, location, nbhd, area_ha
+</p>
+
+<h3>Tree Inventory Dataset</h3>
+<p>
+  <strong>Description:</strong> Provides details about the tree inventory in Winnipeg, including tree IDs, botanical names, common names, locations, and associated parks.<br>
+  <strong>Key Fields:</strong> tree_id, botanical, common, x, y, nbhd, park
+</p>
+
+<h3>Parks' Assets Dataset</h3>
+<p>
+  <strong>Description:</strong> Includes information about various assets in parks, such as asset IDs, classes, types, and associated parks.<br>
+  <strong>Key Fields:</strong> asset_id, asset_class, park_id, park_name, asset_type
+</p>
+
+<h2>Database Structure:</h2>
+<ul>
+  <li><strong>Parks:</strong> park_id, park_name, location, nbhd, area_ha</li>
+  <li><strong>Trees:</strong> tree_id, botanical, common, x, y, nbhd, park_id</li>
+  <li><strong>Assets:</strong> asset_id, asset_class, park_id, park_name, asset_type</li>
+</ul>
+
+<h2>Integration Plan:</h2>
+<p>
+  <strong>Relationships:</strong> A park can have many trees and many assets. Trees and assets are linked to parks via the park_id.<br>
+  <strong>Data Seeding:</strong> The seed script populates the database with data from the APIs with correct references between trees, assets, and parks.
+</p>
+
+<p>The integration provides a detailed view of Winnipeg's parks, including the trees and assets in them.</p>
