@@ -1,17 +1,18 @@
 <h1 class="text-2xl font-bold mb-4">Assets</h1>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <% @assets.each do |asset| %>
-    <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-xl font-bold">Asset ID: <%= asset.asset_id %></h2>
-      <p>Asset Class: <%= asset.asset_class %></p>
-      <p>Park Name: <%= asset.park_name %></p>
-      <p>Asset Type: <%= asset.asset_type %></p>
-      <%= link_to 'Show', asset_path(asset), class: 'text-blue-500 hover:underline' %>
-    </div>
-  <% end %>
+    <% @assets.each do |asset| %>
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-bold">
+                <%= link_to "Asset ID: #{asset.asset_id}", asset_path(asset), class: 'text-blue-500 hover:underline' %>
+            </h2>
+            <p>Asset Class: <%= asset.asset_class %></p>
+            <p>Park Name: <%= asset.park_name %></p>
+            <p>Asset Type: <%= asset.asset_type %></p>
+        </div>
+    <% end %>
 </div>
 
 <div class="mt-4">
-  <%= paginate @assets %>
+    <%= paginate @assets %>
 </div>

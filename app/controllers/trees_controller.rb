@@ -1,6 +1,6 @@
 class TreesController < ApplicationController
   def index
-    @trees = Tree.page(params[:page]).per(10)
+    @trees = Tree.page(params[:page]).per(12)
   end
 
   def show

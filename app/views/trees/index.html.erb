@@ -1,17 +1,18 @@
 <h1 class="text-2xl font-bold mb-4">Trees</h1>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <% @trees.each do |tree| %>
-    <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-xl font-bold"><%= tree.common %></h2>
-      <p>Botanical Name: <%= tree.botanical %></p>
-      <p>Location: <%= tree.x %>, <%= tree.y %></p>
-      <p>Park: <%= tree.park&.park_name %></p>
-      <%= link_to 'Show', tree_path(tree), class: 'text-blue-500 hover:underline' %>
-    </div>
-  <% end %>
+    <% @trees.each do |tree| %>
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-bold">
+                <%= link_to tree.common, tree_path(tree), class: 'text-blue-500 hover:underline' %>
+            </h2>
+            <p>Botanical Name: <%= tree.botanical %></p>
+            <p>Location: <%= tree.x %>, <%= tree.y %></p>
+            <p>Park: <%= tree.park&.park_name %></p>
+        </div>
+    <% end %>
 </div>
 
 <div class="mt-4">
-  <%= paginate @trees %>
+    <%= paginate @trees %>
 </div>

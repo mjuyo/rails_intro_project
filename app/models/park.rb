@@ -3,5 +3,5 @@ class Park < ApplicationRecord
     has_many :assets, foreign_key: 'park_id', primary_key: 'park_id'
     validates :park_id, :park_name, :location, presence: true
 
-    paginates_per 10
+ 
 end
