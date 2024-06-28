@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :trees, only: [:index, :show]
   resources :assets, only: [:index, :show]
 
-  get 'search_trees', to: 'trees#search'
+  get 'search', to: 'search#index'
   get 'about', to: 'about#index'
   
 

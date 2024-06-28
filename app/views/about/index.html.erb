@@ -1,12 +1,12 @@
-<div class="bg-gray-100 text-gray-900 p-8">
+<div class="p-8">
     <div class="max-w-4xl mx-auto">
         <h1 class="text-3xl font-bold mb-6 text-center text-blue-500">About Parks, Trees, and Assets in Winnipeg</h1>
         <p class="text-lg mb-6 text-center">
         This application integrates data from three datasets provided by the City of Winnipeg's Open Data Portal. The goal is to create a comprehensive platform that provides detailed information about parks, their trees, and associated assets in Winnipeg.
         </p>
 
-        <div class="bg-white p-6 rounded shadow mb-6">
-        <h2 class="text-2xl font-semibold mb-4">Data Sources:</h2>
+        <div class="bg-gray-700 p-6 rounded shadow mb-6">
+        <h2 class="text-2xl font-bold mb-4">Data Sources:</h2>
 
         <div class="mb-6">
             <h3 class="text-xl font-semibold">Parks Dataset</h3>
@@ -30,21 +30,21 @@
         </div>
         </div>
 
-        <div class="bg-white p-6 rounded shadow mb-6">
+        <div class="bg-gray-700 p-6 rounded shadow mb-6">
         <h2 class="text-2xl font-semibold mb-4">Database Structure:</h2>
         <p class="mb-4"><strong>Parks:</strong> park_id, park_name, neighborhood, address, hectares</p>
         <p class="mb-4"><strong>Trees:</strong> tree_id, common_name, scientific_name, diameter, latitude, longitude, neighborhood</p>
         <p class="mb-4"><strong>Assets:</strong> asset_id, asset_class, park_id, park_name, asset_type</p>
         </div>
 
-        <div class="bg-white p-6 rounded shadow mb-6">
+        <div class="bg-gray-700 p-6 rounded shadow mb-6">
         <h2 class="text-2xl font-semibold mb-4">Integration Plan:</h2>
         <p class="mb-4"><strong>Relationships:</strong> A park can have many trees and many assets. Trees and assets are linked to parks via the park_id.</p>
         <p class="mb-4"><strong>Data Seeding:</strong> The seed script populates the database with data from the APIs with correct references between trees, assets, and parks.</p>
         <p class="mb-4">The integration provides a detailed view of Winnipeg's parks, including the trees and assets in them.</p>
         </div>
 
-        <div class="bg-white p-6 rounded shadow mb-6">
+        <div class="bg-gray-700 p-6 rounded shadow mb-6">
         <h2 class="text-2xl font-semibold mb-4">Entity-Relationship Diagram (ERD):</h2>
         <div class="flex justify-center">
             <img src="https://i.postimg.cc/j262nWcC/Untitled-Diagram.jpg" alt="ERD Diagram">

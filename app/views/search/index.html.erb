@@ -1,0 +1,24 @@
+<h1 class="text-2xl font-bold mb-4">Search Results</h1>
+
+<% if @parks.any? %>
+    <p>Your search found <%= @parks.total_count %> parks.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <% @parks.each do |park| %>
+        <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-bold">
+            <%= link_to park.park_name, park_path(park), class: 'text-blue-500 hover:underline' %>
+        </h3>
+        <p>Location: <%= park.location %></p>
+        <p>Neighborhood: <%= park.nbhd %></p>
+        <p>Area (ha): <%= park.area_ha %></p>
+        </div>
+    <% end %>
+    </div>
+
+    <div class="mt-4">
+    <%= paginate @parks %>
+    </div>
+
+<% else %>
+    <p>No parks found.</p>
+<% end %>

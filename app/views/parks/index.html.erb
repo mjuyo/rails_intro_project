@@ -2,7 +2,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     <% @parks.each do |park| %>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-gray-700 p-4 rounded shadow">
             <h2 class="text-xl font-bold">
                 <%= link_to park.park_name, park_path(park), class: 'text-blue-500 hover:underline' %>
             </h2>

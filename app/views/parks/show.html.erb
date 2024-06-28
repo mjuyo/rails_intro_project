@@ -1,29 +1,32 @@
-<h1><%= @park.park_name %></h1>
-<p>Location: <%= @park.location %></p>
-<p>Neighborhood: <%= @park.nbhd %></p>
-<p>Area (ha): <%= @park.area_ha %></p>
+<div>
+    <h1><%= @park.park_name %></h1>
+    <p>Location: <%= @park.location %></p>
+    <p>Neighborhood: <%= @park.nbhd %></p>
+    <p>Area (ha): <%= @park.area_ha %></p>
 
-<!-- Conditional rendering -->
-<h2>Trees in this park</h2>
-<% if @park.trees.any? %>
+    <!-- Conditional rendering -->
+    <h2>Trees in this park</h2>
+    <% if @park.trees.any? %>
+        <ul>
+            <% @trees.each do |tree| %>
+                <li><%= link_to tree.common, tree_path(tree) %></li>
+            <% end %>
+        </ul>
+    <% else %>
+        <p>There are no trees in this park.</p>
+    <% end %>
+
+    <h2>Assets in this park</h2>
+    <% if @park.assets.any? %>
     <ul>
-        <% @trees.each do |tree| %>
-            <li><%= link_to tree.common, tree_path(tree) %></li>
+        <% @park.assets.each do |asset| %>
+        <li><%= asset.asset_class %> (<%= asset.asset_type %>)</li>
         <% end %>
     </ul>
-<% else %>
-    <p>There are no trees in this park.</p>
-<% end %>
-
-<h2>Assets in this park</h2>
-<% if @park.assets.any? %>
-  <ul>
-    <% @park.assets.each do |asset| %>
-      <li><%= asset.asset_class %> (<%= asset.asset_type %>)</li>
+    <% else %>
+    <p>There are no assets in this park.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no assets in this park.</p>
-<% end %>
 
-<%= link_to 'Back to Parks', parks_path %>
+    <%= link_to 'Back to Parks', parks_path %>
+
+</div>
