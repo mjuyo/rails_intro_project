@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'assets/index'
-  get 'assets/show'
-  get 'about/index'
-  
+ 
+  root 'parks#index'
+
   resources :parks, only: [:index, :show]
   resources :trees, only: [:index, :show]
   resources :assets, only: [:index, :show]
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
   get 'search_trees', to: 'trees#search'
   get 'about', to: 'about#index'
   
-  root 'parks#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

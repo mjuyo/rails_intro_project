@@ -5,31 +5,40 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Parks', parks_path %>
-      <%= link_to 'Trees', trees_path %>
-      <%= link_to 'Assets', assets_path %>
-      <%= link_to 'About', about_path %>
+  <body class="bg-gray-100 text-gray-800">
+    <nav class="bg-blue-500 p-4 text-white">
+      <div class="container mx-auto flex justify-between">
+        <div>
+          <%= link_to 'Home', root_path, class: 'mr-4 hover:text-gray-200' %>
+          <%= link_to 'Parks', parks_path, class: 'mr-4 hover:text-gray-200' %>
+          <%= link_to 'Trees', trees_path, class: 'mr-4 hover:text-gray-200' %>
+          <%= link_to 'Assets', assets_path, class: 'mr-4 hover:text-gray-200' %>
+          <%= link_to 'About', about_path, class: 'hover:text-gray-200' %>
+        </div>
+      </div>
     </nav>
-    <form action="<%= search_trees_path %>" method="get">
-      <input type="text" name="query" placeholder="Search trees...">
-      <select name="park_id">
-        <option value="">Neighborhood</option>
-        <% Park.distinct.order(:nbhd).pluck(:nbhd).uniq.each do |nbhd| %>
-          <option value="<%= nbhd %>"><%= nbhd %></option>
-        <% end %>
-      </select>
-      <input type="submit" value="Search">
-    </form>
 
-    <%= yield %>
+    <div class="container mx-auto p-4">
+      <form action="<%= search_trees_path %>" method="get">
+        <input type="text" name="query" placeholder="Search trees...">
+        <select name="park_id">
+          <option value="">Neighborhood</option>
+          <% Park.distinct.order(:nbhd).pluck(:nbhd).uniq.each do |nbhd| %>
+            <option value="<%= nbhd %>"><%= nbhd %></option>
+          <% end %>
+        </select>
+        <input type="submit" value="Search">
+      </form>
+      <%= yield %>
+
+    </div>
+
   </body>
 </html>
 
