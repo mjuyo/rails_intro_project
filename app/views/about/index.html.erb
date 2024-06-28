@@ -1,38 +1,54 @@
-<h1>About Parks, Trees, and Assets in Winnipeg</h1>
+<div class="bg-gray-100 text-gray-900 p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center text-blue-500">About Parks, Trees, and Assets in Winnipeg</h1>
+    <p class="text-lg mb-6 text-center">
+      This application integrates data from three datasets provided by the City of Winnipeg's Open Data Portal. The goal is to create a comprehensive platform that provides detailed information about parks, their trees, and associated assets in Winnipeg.
+    </p>
 
-<p>This application integrates data from three datasets provided by the City of Winnipeg's Open Data Portal. The goal is to create a comprehensive platform that provides detailed information about parks, their trees, and associated assets in Winnipeg.</p>
+    <div class="bg-white p-6 rounded shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Data Sources:</h2>
 
-<h2>Data Sources:</h2>
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold">Parks Dataset</h3>
+        <p class="mb-2">Description: Contains information about parks in Winnipeg, including park names, locations, neighborhoods, and areas.</p>
+        <p class="mb-2"><strong>Key Fields:</strong> park_id, park_name, neighborhood, address, hectares</p>
+        <p class="mb-2"><a href="https://data.winnipeg.ca/resource/tx3d-pfxq.json" class="text-blue-500 hover:underline">View Dataset</a></p>
+      </div>
 
-<h3>Parks Dataset</h3>
-<p>
-  <strong>Description:</strong> Contains information about parks in Winnipeg, including park names, locations, neighborhoods, and areas.<br>
-  <strong>Key Fields:</strong> park_id, park_name, location, nbhd, area_ha
-</p>
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold">Tree Inventory Dataset</h3>
+        <p class="mb-2">Description: Provides details about the tree inventory in Winnipeg, including tree IDs, common names, scientific names, diameters, locations, and neighborhoods.</p>
+        <p class="mb-2"><strong>Key Fields:</strong> tree_id, common_name, scientific_name, diameter, latitude, longitude, neighborhood</p>
+        <p class="mb-2"><a href="https://data.winnipeg.ca/resource/hfwk-jp4h.json" class="text-blue-500 hover:underline">View Dataset</a></p>
+      </div>
 
-<h3>Tree Inventory Dataset</h3>
-<p>
-  <strong>Description:</strong> Provides details about the tree inventory in Winnipeg, including tree IDs, botanical names, common names, locations, and associated parks.<br>
-  <strong>Key Fields:</strong> tree_id, botanical, common, x, y, nbhd, park
-</p>
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold">Parks' Assets Dataset</h3>
+        <p class="mb-2">Description: Includes information about various assets in parks, such as asset IDs, classes, types, and associated parks.</p>
+        <p class="mb-2"><strong>Key Fields:</strong> asset_id, asset_class, park_id, park_name, asset_type</p>
+        <p class="mb-2"><a href="https://data.winnipeg.ca/resource/dk7c-zxyd.json" class="text-blue-500 hover:underline">View Dataset</a></p>
+      </div>
+    </div>
 
-<h3>Parks' Assets Dataset</h3>
-<p>
-  <strong>Description:</strong> Includes information about various assets in parks, such as asset IDs, classes, types, and associated parks.<br>
-  <strong>Key Fields:</strong> asset_id, asset_class, park_id, park_name, asset_type
-</p>
+    <div class="bg-white p-6 rounded shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Database Structure:</h2>
+      <p class="mb-4"><strong>Parks:</strong> park_id, park_name, neighborhood, address, hectares</p>
+      <p class="mb-4"><strong>Trees:</strong> tree_id, common_name, scientific_name, diameter, latitude, longitude, neighborhood</p>
+      <p class="mb-4"><strong>Assets:</strong> asset_id, asset_class, park_id, park_name, asset_type</p>
+    </div>
 
-<h2>Database Structure:</h2>
-<ul>
-  <li><strong>Parks:</strong> park_id, park_name, location, nbhd, area_ha</li>
-  <li><strong>Trees:</strong> tree_id, botanical, common, x, y, nbhd, park_id</li>
-  <li><strong>Assets:</strong> asset_id, asset_class, park_id, park_name, asset_type</li>
-</ul>
+    <div class="bg-white p-6 rounded shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Integration Plan:</h2>
+      <p class="mb-4"><strong>Relationships:</strong> A park can have many trees and many assets. Trees and assets are linked to parks via the park_id.</p>
+      <p class="mb-4"><strong>Data Seeding:</strong> The seed script populates the database with data from the APIs with correct references between trees, assets, and parks.</p>
+      <p class="mb-4">The integration provides a detailed view of Winnipeg's parks, including the trees and assets in them.</p>
+    </div>
 
-<h2>Integration Plan:</h2>
-<p>
-  <strong>Relationships:</strong> A park can have many trees and many assets. Trees and assets are linked to parks via the park_id.<br>
-  <strong>Data Seeding:</strong> The seed script populates the database with data from the APIs with correct references between trees, assets, and parks.
-</p>
-
-<p>The integration provides a detailed view of Winnipeg's parks, including the trees and assets in them.</p>
+    <div class="bg-white p-6 rounded shadow mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Entity-Relationship Diagram (ERD):</h2>
+      <div class="flex justify-center">
+        <img src="https://i.postimg.cc/j262nWcC/Untitled-Diagram.jpg" alt="ERD Diagram">
+      </div>
+    </div>
+  </div>
+</div>
