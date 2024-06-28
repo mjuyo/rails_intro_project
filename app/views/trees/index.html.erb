@@ -1,6 +1,26 @@
 <h1>Trees</h1>
-<ul>
-  <% @trees.each do |tree| %>
-    <li><%= link_to tree.common, tree_path(tree) %></li>
-  <% end %>
-</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Common Name</th>
+      <th>Botanical Name</th>
+      <th>Location</th>
+      <th>Park</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trees.each do |tree| %>
+      <tr>
+        <td><%= tree.common %></td>
+        <td><%= tree.botanical %></td>
+        <td><%= tree.x %>, <%= tree.y %></td>
+        <td><%= tree.park&.park_name %></td>
+        <td><%= link_to 'Show', tree_path(tree) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @trees %>

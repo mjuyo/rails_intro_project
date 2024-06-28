@@ -1,6 +1,26 @@
 <h1>Parks</h1>
-<ul>
-  <% @parks.each do |park| %>
-    <li><%= link_to park.park_name, park_path(park) %></li>
-  <% end %>
-</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Park Name</th>
+      <th>Location</th>
+      <th>Neighborhood</th>
+      <th>Area (ha)</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parks.each do |park| %>
+      <tr>
+        <td><%= park.park_name %></td>
+        <td><%= park.location %></td>
+        <td><%= park.nbhd %></td>
+        <td><%= park.area_ha %></td>
+        <td><%= link_to 'Show', park_path(park) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @parks %>
