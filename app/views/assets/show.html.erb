@@ -12,7 +12,7 @@
 
 <p>
     <strong>Park Name:</strong>
-    <%= @asset.park_name %>
+    <%= link_to @asset.park_name, park_path(@park), class: "text-blue-500" %>
 </p>
 
 <p>
@@ -20,4 +20,4 @@
     <%= @asset.asset_type %>
 </p>
 
-<%= link_to 'Back to Assets', assets_path %>
+<%= link_to 'Back to Assets', assets_path, class: "text-blue-500" %>

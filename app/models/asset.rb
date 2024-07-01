@@ -1,5 +1,4 @@
 class Asset < ApplicationRecord
-    belongs_to :park, foreign_key: 'park_id', primary_key: 'park_id'
-
-
+    belongs_to :park, foreign_key: 'park_name', primary_key: 'park_name'
+    validates :park_id, :asset_class, presence: true
 end

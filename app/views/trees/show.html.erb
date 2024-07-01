@@ -1,7 +1,29 @@
-<h1><%= @tree.common %></h1>
-<p>Botanical Name: <%= @tree.botanical %></p>
-<p>Location: (<%= @tree.x %>, <%= @tree.y %>)</p>
-<p>Neighborhood: <%= @tree.nbhd %></p>
-<p>Park: <%= link_to @tree.park.park_name, park_path(@tree.park) if @tree.park %></p>
+<div class="max-w-4xl mx-auto bg-gray-700 shadow-md rounded-lg p-6 mt-6">
+  <h1 class="text-2xl font-bold mb-4"><%= @tree.common %></h1>
 
-<%= link_to 'Back to Trees', trees_path %>
+  <p class="text-lg mb-2">
+    <strong>Botanical Name:</strong>
+    <%= @tree.botanical %>
+  </p>
+
+  <p class="text-lg mb-2">
+    <strong>Location:</strong>
+    <%= @tree.x %>, <%= @tree.y %>
+  </p>
+
+  <p class="text-lg mb-2">
+    <strong>Neighborhood:</strong>
+    <%= @tree.nbhd %>
+  </p>
+
+  <p class="text-lg mb-2">
+    <strong>Park:</strong>
+    <% if @tree.park.present? %>
+      <%= link_to @tree.park.park_name, park_path(@tree.park), class: 'text-blue-500 hover:underline' %>
+    <% else %>
+      <%= link_to 'Not in a park', parks_path, class: 'text-blue-500 hover:underline' %>
+    <% end %>
+  </p>
+
+  <%= link_to 'Back to Trees', trees_path, class: 'text-blue-500 hover:underline' %>
+</div>

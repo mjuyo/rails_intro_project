@@ -5,5 +5,6 @@ class AssetsController < ApplicationController
 
   def show
     @asset = Asset.find(params[:id])
+    @park = Park.find_by(park_name: @asset.park_name)
   end
 end

@@ -1,15 +1,16 @@
 <div>
-    <h1><%= @park.park_name %></h1>
-    <p>Location: <%= @park.location %></p>
-    <p>Neighborhood: <%= @park.nbhd %></p>
-    <p>Area (ha): <%= @park.area_ha %></p>
+    <h1 class="text-2xl font-bold mb-4"><%= @park.park_name %></h1>
+
+    <p class="text-lg mb-2">Location: <%= @park.location %></p>
+    <p class="text-lg mb-2">Neighborhood: <%= @park.nbhd %></p>
+    <p class="text-lg mb-4">Area (ha): <%= @park.area_ha %></p>
 
     <!-- Conditional rendering -->
-    <h2>Trees in this park</h2>
+    <h2 class="text-xl font-semibold mt-4 mb-2">Trees in this park</h2>
     <% if @park.trees.any? %>
-        <ul>
+        <ul class="list-disc list-inside mb-4">
             <% @trees.each do |tree| %>
-                <li><%= link_to tree.common, tree_path(tree) %></li>
+                <li><%= link_to tree.common, tree_path(tree), class: "text-blue-500" %></li>
             <% end %>
         </ul>
     <% else %>
@@ -20,13 +21,13 @@
     <% if @park.assets.any? %>
     <ul>
         <% @park.assets.each do |asset| %>
-        <li><%= asset.asset_class %> (<%= asset.asset_type %>)</li>
+            <li><%= asset.asset_class %> (<%= asset.asset_type %>)</li>
         <% end %>
     </ul>
     <% else %>
-    <p>There are no assets in this park.</p>
+        <p>There are no assets in this park.</p>
     <% end %>
 
-    <%= link_to 'Back to Parks', parks_path %>
+    <%= link_to 'Back to Parks', parks_path, class: 'text-blue-500 hover:underline' %>
 
 </div>
