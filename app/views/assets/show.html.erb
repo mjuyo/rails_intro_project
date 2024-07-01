@@ -1,23 +1,29 @@
-<h1>Asset Details</h1>
+<div class="max-w-4xl mx-auto bg-gray-700 text-white shadow-md rounded-lg p-6 mt-6">
+  <h1 class="text-2xl font-bold mb-4">Asset Details</h1>
 
-<p>
-    <strong>Asset ID:</strong>
-    <%= @asset.asset_id %>
-</p>
+  <p class="text-lg mb-2">
+      <strong>Asset ID:</strong>
+      <%= @asset.asset_id %>
+  </p>
 
-<p>
-    <strong>Asset Class:</strong>
-    <%= @asset.asset_class %>
-</p>
+  <p class="text-lg mb-2">
+      <strong>Asset Class:</strong>
+      <%= @asset.asset_class %>
+  </p>
 
-<p>
-    <strong>Park Name:</strong>
-    <%= link_to @asset.park_name, park_path(@park), class: "text-blue-500" %>
-</p>
+  <p class="text-lg mb-2">
+      <strong>Park Name:</strong>
+      <% if @asset.park.present? %>
+        <%= link_to @asset.park_name, park_path(@asset.park), class: 'text-blue-400 hover:underline' %>
+      <% else %>
+        <%= link_to 'Not in a park', parks_path, class: 'text-blue-400 hover:underline' %>
+      <% end %>
+  </p>
 
-<p>
-    <strong>Asset Type:</strong>
-    <%= @asset.asset_type %>
-</p>
+  <p class="text-lg mb-2">
+      <strong>Asset Type:</strong>
+      <%= @asset.asset_type %>
+  </p>
 
-<%= link_to 'Back to Assets', assets_path, class: "text-blue-500" %>
+  <%= link_to 'Back to Assets', assets_path, class: 'text-blue-400 hover:underline' %>
+</div>
